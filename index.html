@@ -23,42 +23,48 @@
 </head>
 
 <body>
-  <style>
+ <style>
   div {
     background: #333;
     padding: 20px;
     color: #fff;
   }
 </style>
+<script>
+function search_animal() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('animals');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";                 
+        }
+    }
+}
+</script>
 <div>
       <!-- input tag -->
-    <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals..">
+    <input id="searchbar" onkeyup="search_animal()" type="text"
+        name="search" placeholder="Search animals..">
       
     <!-- ordered list -->
-    <ol id="list">
-        <li class="animals" style="display: list-item;">Cat</li>
-        <li class="animals" style="display: list-item;">Dog</li>
-        <li class="animals" style="display: list-item;">פיל</li>
-        <li class="animals" style="display: list-item;">Fish</li>
-        <li class="animals" style="display: list-item;">Gorilla</li>
-        <li class="animals" style="display: list-item;">Monkey</li>
-        <li class="animals" style="display: list-item;">Turtle</li>
-        <li class="animals" style="display: list-item;">Whale</li>
-        <li class="animals" style="display: list-item;">Aligator</li>
-        <li class="animals" style="display: list-item;">Donkey</li>
-        <li class="animals" style="display: list-item;">Horse</li>
+    <ol id='list'>
+        <li class="animals">Cat</li>
+        <li class="animals">Dog</li>
+        <li class="animals">פיל</li>
+        <li class="animals">Fish</li>
+        <li class="animals">Gorilla</li>
+        <li class="animals">Monkey</li>
+        <li class="animals">Turtle</li>
+        <li class="animals">Whale</li>
+        <li class="animals">Aligator</li>
+        <li class="animals">Donkey</li>
+        <li class="animals">Horse</li>
     </ol>
 </div>
   
-<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
-  <script src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-5e6b10ca-c44e-141a-2837-38c071475201" crossorigin=""></script>
-
-
-<div id="adidiMorfixChromeExtensionBalloon" class="adidi-mceb-topRight"><div class="adidi-mceb-img-box"><img src="chrome-extension://edapkleoiajaekmconcehhkcbehppgom/icons/icon.png"></div>
-     <div class="adidi-mceb-x-box"><img src="chrome-extension://edapkleoiajaekmconcehhkcbehppgom/icons/x.png"></div>
-     <div class="adidi-mceb-title-box"><div class="adidi-mceb-t"></div></div>
-     <div class="adidi-mceb-content"></div>
-     <div class="adidi-mceb-footer">
-          <img src="chrome-extension://edapkleoiajaekmconcehhkcbehppgom/icons/settings.png">
-          <a href="chrome-extension://edapkleoiajaekmconcehhkcbehppgom/settings.html" target="_blank">Settings</a>
-    </div></div></body></html>
+  </body></html>
