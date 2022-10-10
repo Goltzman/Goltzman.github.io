@@ -29,6 +29,7 @@
 
 <body>
   <style>
+
 body, html {
   margin: 0;
   padding: 0;
@@ -36,6 +37,7 @@ body, html {
   direction: rtl;
   font-family: 'Open Sans', sans-serif;
   transition: all 500ms ease-out;
+  background: #81C784;
 }
 
 img.img {
@@ -44,10 +46,13 @@ img.img {
 }
 
 img.img:hover {
-  position: absolute;
+  position: fixed;
   left: 30px;
-  width: calc(100vw - 80px);
+  top: 30px;
+  width: calc(100vw - 60px);
+  height: auto;
   box-shadow: 0 0 0 900px rgba(0,0,0,0.8);
+  z-index: 200;
 }
 
 img.img:hover + .close-img{
@@ -59,11 +64,11 @@ img.img:hover + .close-img{
   border-radius: 10px;
   border: none;
   padding: 10px 15px;
-  z-index: 100;
+  z-index: 201;
 }
 
 .close-img {
-  display: none;
+ display: none;
 }
 
 a {
@@ -85,6 +90,7 @@ a {
   position: fixed;
   left: 20px;
   bottom: 30px;
+  z-index: 110;
 }
 
 .header {
@@ -135,10 +141,15 @@ ul#list li.title {
 }
 
 .recipe {
+  position: relative;
   padding: 30px;
   box-sizing: border-box;
-  min-height: 100vh;
+  min-height: calc(100vh - 20px);
   border-bottom: 1px solid #999;
+  margin: 0 10px 10px 10px;
+  box-shadow: 10px 10px 0 -5px #00000050;
+  background: #fff;
+  border-top: 10px solid #81C784;
 }
   </style>
   
