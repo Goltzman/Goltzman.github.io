@@ -5,51 +5,86 @@
 
   <meta name="robots" content="noindex">    
   </style>
-<script>
-function search_animal() {
+  <script>
+  function search_food() {
     let input = document.getElementById('searchbar').value
-    input=input.toLowerCase();
-    let x = document.getElementsByClassName('animals');
-      
-    for (i = 0; i < x.length; i++) { 
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display="none";
-        }
-        else {
-            x[i].style.display="list-item";                 
-        }
+    input = input.toLowerCase();
+    let x = document.getElementsByClassName('food');
+    for (i = 0; i < x.length; i++) {
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        x[i].style.display = "none";
+      } else {
+        x[i].style.display = "list-item";
+      }
     }
-}
+  }
+
+  function ClearFields() {
+    document.getElementById("searchbar").value = "";
+  }
 </script>
 </head>
 
 <body>
- <style>
-  div {
-    background: #333;
-    padding: 20px;
-    color: #fff;
-  }
+  <style>
+
 </style>
-<div>
-      <!-- input tag -->
-    <input id="searchbar" onkeyup="search_animal()" type="text"
-        name="search" placeholder="Search animals..">
-      
-    <!-- ordered list -->
-    <ol id='list'>
-        <li class="animals">Cat</li>
-        <li class="animals">Dog</li>
-        <li class="animals">פיל</li>
-        <li class="animals">Fish</li>
-        <li class="animals">Gorilla</li>
-        <li class="animals">Monkey</li>
-        <li class="animals">Turtle</li>
-        <li class="animals">Whale</li>
-        <li class="animals">Aligator</li>
-        <li class="animals">Donkey</li>
-        <li class="animals">Horse</li>
-    </ol>
+  
+<div class="main">
+  <span id="top"></span>
+  <a href="#top" class="back-btn">תוכן עניינים</a>
+  <div class="header">
+    <input id="searchbar" onkeyup="search_food()" type="text" name="search" placeholder="חיפוש" />
+  </div>
+  <ul id='list'>
+      <li class="food"><a href="#a">גונדי</a></li>
+      <li class="food"><a href="#b">עוף בדבש</a></li>
+      <li class="food">פיל</li>
+      <li class="food">Fish</li>
+      <li class="food">Gorilla</li>
+      <li class="food">Monkey</li>
+      <li class="food">Turtle</li>
+      <li class="food">Whale</li>
+      <li class="food">Aligator</li>
+      <li class="food">Donkey</li>
+      <li class="food">Horse</li>
+    </ul>
+  <div class="recipes">
+    <div class="recipe" id="a">
+      <h2>גונדי</h2>
+      <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
+      <h4>מרק :</h4>
+      <p>רבע כוס גרגירי חומוס</p>
+      <p>רבע כוס שעועית</p>
+      <p>חתיכת עוף</p>
+      <p>קצת מלח, פלפל וכורכום.</p>
+      <p>משרים את החומוס והשעועית במים ל4 שעות. מכניסים הכל לסיר עם הרבה מים במשך חצי שעה ואז מוסיפים את הקציצות.</p>
+      <h4>קציצות :</h4>
+      <p>0.5 קילו חזה עוף טחון</p>
+      <p>1 בצל גדול</p>
+      <p>150 גר' קמח חומוס</p>
+      <p>רבע כוס שמן</p>
+      <p>חצי כפית קינמון</p>
+      <p>חצי כפית מלח</p>
+      <p>קצת פלפל והל</p>
+      <p>מערבבים הכל ביחד, עושים קציצות ומוסיפים למרק.</p>
+    </div>
+    <div class="recipe" id="b">
+      <h2>עוף בדבש</h2>
+      <p>2 בצל גדול</p>
+      <p>5 כרעיים גדול</p>
+      <p>200 גר' רסק עגבניות</p>
+      <p>0.5 כוס דבש</p>
+      <p>5 כפות סוכר</p>
+      <p>2 כפות פפריקה מתוקה</p>
+      <p>רבע כפית כורכום</p>
+      <p>פלפל מלח לפי הטעם</p>
+      <p>&nbsp;</p>
+      <p>לטגן את הבצל, להוסיף את הכורכום ו5 כוסות מים רותחים.</p>
+      <p>לערבב את כל התבלינים עם העגבניות, דבש והסויה, להביא לרתיחה ולהוסיף את העוף.</p>
+      <p>לבשל בסיר על אש בינונית כשעה ומידי פעם להפוך את העוף.</p>
+    </div>
+  </div>
 </div>
   
-  </body></html>
+</body></html>
