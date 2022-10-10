@@ -4,6 +4,7 @@
   <title>CodePen Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">    
+  <link rel="manifest" href="/manifest.json">
   </style>
   <script>
   function search_food() {
@@ -704,4 +705,16 @@ ul#list li.title {
   </div>
 </div>
   
-</body></html>
+</body>
+<script>
+ if ('serviceWorker' in navigator) {
+    console.log("Will the service worker register?");
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg){
+        console.log("Yes, it did.");
+     }).catch(function(err) {
+        console.log("No it didn't. This happened:", err)
+    });
+ }
+</script>
+</html>
