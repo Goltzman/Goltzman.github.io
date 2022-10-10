@@ -27,7 +27,83 @@
 
 <body>
   <style>
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 500ms ease-out;
+}
 
+img.img {
+  width:150px;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.back-btn {
+  border: none;
+  background: #eee;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  position: fixed;
+  left: 20px;
+  bottom: 30px;
+}
+
+.header {
+  background: #333;
+  padding: 20px;
+  color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  top: 0;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0;
+}
+
+#searchbar {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+ul#list {
+  padding: 0;
+  margin: 0;
+  color: #222;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+ul#list li {
+  padding: 15px;
+  margin: 0 0 1px 0;
+  display: block;
+  list-style: none;
+  background: #eee;
+}
+
+.recipe {
+  padding: 30px;
+  box-sizing: border-box;
+  height: 100vh;
+  border-bottom: 1px solid #999;
+}
 </style>
   
 <div class="main">
