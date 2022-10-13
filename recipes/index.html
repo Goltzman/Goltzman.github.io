@@ -29,8 +29,6 @@
 
 <body>
   <style>
-
-
 body, html {
   margin: 0;
   padding: 0;
@@ -38,7 +36,9 @@ body, html {
   direction: rtl;
   font-family: 'Open Sans', sans-serif;
   transition: all 500ms ease-out;
-  background: #CEC288;
+  background: #1F51AD;
+  position: relative;
+/*   overflow: hidden; */
 }
 
 h2 {
@@ -96,7 +96,6 @@ a {
   font-family: 'Open Sans', sans-serif;
   position: sticky;
   left: 10px;
-/*   top: calc(100vh - 50px); */
   top: 10px;
   margin: 20px;
   z-index: 110;
@@ -159,12 +158,15 @@ ul#list li.title {
   padding: 30px;
   box-sizing: border-box;
   min-height: calc(100vh - 20px);
+  max-height: calc(100vh - 20px);
+  width: 100%;
   border-bottom: 1px solid #999;
   margin: 0 10px 10px 0;
   box-shadow: 10px 10px 0px -5px #00000020;
   background: #fff;
-  border-top: 10px solid #81C784;
-  border-left: 10px solid #81C784;
+  border-top: 10px solid #1F51AD;
+  border-left: 10px solid #1F51AD;
+  overflow: auto;
 }
   </style>
   
