@@ -134,7 +134,7 @@ h2 {
 }
 
 img.img {
-  width:180px;
+  width:100%;
   z-index: 99;
   transition: all 200ms ease-out;
   cursor: pointer;
@@ -155,7 +155,13 @@ img.img {
 }
 
 .img-label {
-  display: inline;
+  display: flex;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 10px;
+  object-fit: cover;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .img-checkbox:checked + img {
