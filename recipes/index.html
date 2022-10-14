@@ -29,6 +29,7 @@
 
 <body>
   <style>
+/*  */
 body, html {
   margin: 0;
   padding: 0;
@@ -38,7 +39,59 @@ body, html {
   transition: all 500ms ease-out;
   background: #1F51AD;
   position: relative;
-/*   overflow: hidden; */
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  max-width: 900px;
+  top: 0;
+  background: #222;
+  padding: 0 20px;
+  line-height: 60px;
+  color: #fff;
+  box-sizing: border-box;
+  z-index: 111;
+}
+
+.header a.menu-btn {
+  padding: 0 0 0 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  width: auto;
+  display: inline-block;
+}
+
+.header-title {
+  vertical-align: 2px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  height: 0;
+  width: 0; 
+  display: inline-block;
+  position: absolute;
+}
+
+input[type="checkbox"]:checked ~ .menu-wrap {
+  left: 0;
+}
+
+.menu-wrap {
+/*   position: fixed; */
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  top: 0;
+  left: 100%;
+  transition: all 200ms ease-out;
+  z-index: 99;
 }
 
 h2 {
@@ -103,19 +156,21 @@ a {
   float: left;
 }
 
-.header {
+.search-bar {
   background: #333;
   padding: 20px;
   color: #fff;
   box-sizing: border-box;
   width: 100%;
-  top: 0;
+  margin-top: 60px;
 }
 
 .main {
   margin: 0 auto;
   max-width: 900px;
-  padding: 0;
+  padding: 60px 0 0 0;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 #searchbar {
@@ -153,73 +208,84 @@ ul#list li.title {
   top: 0px;
 }
 
+ul#list li label {
+  display: block;
+  cursor: pointer;
+}
+
 .recipe {
   position: relative;
-  padding: 30px;
+  padding: 90px 30px;
   box-sizing: border-box;
-  min-height: calc(100vh - 20px);
-  max-height: calc(100vh - 20px);
+  min-height: calc(100vh);
+  max-height: calc(100vh);
   width: 100%;
   border-bottom: 1px solid #999;
-  margin: 0 10px 10px 0;
-  box-shadow: 10px 10px 0px -5px #00000020;
+  margin: 0 0 5px 0;
   background: #fff;
-  border-top: 10px solid #1F51AD;
-  border-left: 10px solid #1F51AD;
   overflow: auto;
+/*   top: 100px; */
 }
   </style>
   
 <div class="main">
   <span id="top"></span>
   <div class="header">
-    <input id="searchbar" onkeyup="search_food()" type="text" name="search" placeholder="חיפוש" />
+    <a class="menu-btn" href="#top"><i class="las la-bars"></i></a>
+    <span class="header-title">אוכל של בית</span>
   </div>
-  <ul id='list'>
-    <li class="food title">עיקריות</li>
-    <li class="food"><a href="#a1">אשרשטה</a></li>
-    <li class="food"><a href="#a">גונדי</a></li>
-    <li class="food"><a href="#b">עוף בדבש</a></li>
-    <li class="food"><a href="#c">עוף עם ירקות בקוקי</a></li>
-    <li class="food"><a href="#d">עלי גפן ממולאים (דורמה)</a></li>
-    <li class="food"><a href="#e">אורז פרסי עם גולגולים</a></li>
-    <li class="food"><a href="#f">אורז עם חלב (שרברנג')</a></li>
-    <li class="food"><a href="#g">סיר של שבת בבוקר (חמין פרסי)</a></li>
-    <li class="food"><a href="#h">קנישיקלך</a></li>
-    <li class="food"><a href="#i">קנידלך</a></li>
-    <li class="food"><a href="#j">קרפלך</a></li>
-    <li class="food"><a href="#k">קנלונס</a></li>
-    <li class="food"><a href="#l">אמפנדס</a></li>
-    <li class="food"><a href="#m">פיצה של סבא</a></li>
-    <li class="food"><a href="#n">צלי אסאדו של אבא</a></li>
-    <li class="food"><a href="#o">פשטידת ירקות של אמא</a></li>
-    <li class="food"><a href="#p">פאד תאי</a></li>
 
-    <li class="food title">תוספות</li>
-    <li class="food"><a href="#q">רוטב ירוק (דרמה סבזי)</a></li>
-    <li class="food"><a href="#r">רוטב אדום (פסנג'ון)</a></li>
-    <li class="food"><a href="#s">מטבוחה</a></li>
-    <li class="food"><a href="#t">חומוס</a></li>
-    <li class="food"><a href="#u">גבינה קשה של סבתא</a></li>
-    <li class="food"><a href="#v">סזיקי פרסי</a></li>
-    <li class="food"><a href="#w">צ'ימיצ'ורי</a></li>
-    <li class="food"><a href="#x">רוטב אדום של סבא</a></li>
-    <li class="food"><a href="#y">קציצות דגים (גפילטא מלוח)</a></li>
-    <li class="food"><a href="#z">בצק עם בירה (טוב להרבה דברים)</a></li>
-    <li class="food"><a href="#aa">חרוסת</a></li>
-    <li class="food"><a href="#bb">לחמניות של פסח</a></li>
-    <li class="food"><a href="#cc">סלט כרוב</a></li>
-    <li class="food"><a href="#dd">פראסה</a></li>
-    <li class="food"><a href="#ee">רוטב בשמאל</a></li>
+  <div class="menu-wrap">
+    <div class="search-bar">
+      <input id="searchbar" onkeyup="search_food()" type="text" name="search" placeholder="חיפוש" />
+    </div>
 
-    <li class="food title">מתוקים</li>
-    <li class="food"><a href="#ff">פלודה</a></li>
-    <li class="food"><a href="#gg">כדורי דבש שקדים</a></li>
-    <li class="food"><a href="#hh">עוגה בסיסית(יומולדת)</a></li>
-    <li class="food"><a href="#ii">עוגת שוקולד</a></li>
-    <li class="food"><a href="#jj">עוגיות רולדה של סבתא</a></li>
-  </ul>
-  <a href="#top" class="back-btn">תוכן עניינים</a>
+    <ul id='list'>
+      <li class="food title">עיקריות</li>
+      <li class="food"><a href="#a1">אשרשטה</a></li>
+      <li class="food"><a href="#a">גונדי</a></li>
+      <li class="food"><a href="#b">עוף בדבש</a></li>
+      <li class="food"><a href="#c">עוף עם ירקות בקוקי</a></li>
+      <li class="food"><a href="#d">עלי גפן ממולאים (דורמה)</a></li>
+      <li class="food"><a href="#e">אורז פרסי עם גולגולים</a></li>
+      <li class="food"><a href="#f">אורז עם חלב (שרברנג')</a></li>
+      <li class="food"><a href="#g">סיר של שבת בבוקר (חמין פרסי)</a></li>
+      <li class="food"><a href="#h">קנישיקלך</a></li>
+      <li class="food"><a href="#i">קנידלך</a></li>
+      <li class="food"><a href="#j">קרפלך</a></li>
+      <li class="food"><a href="#k">קנלונס</a></li>
+      <li class="food"><a href="#l">אמפנדס</a></li>
+      <li class="food"><a href="#m">פיצה של סבא</a></li>
+      <li class="food"><a href="#n">צלי אסאדו של אבא</a></li>
+      <li class="food"><a href="#o">פשטידת ירקות של אמא</a></li>
+      <li class="food"><a href="#p">פאד תאי</a></li>
+
+      <li class="food title">תוספות</li>
+      <li class="food"><a href="#q">רוטב ירוק (דרמה סבזי)</a></li>
+      <li class="food"><a href="#r">רוטב אדום (פסנג'ון)</a></li>
+      <li class="food"><a href="#s">מטבוחה</a></li>
+      <li class="food"><a href="#t">חומוס</a></li>
+      <li class="food"><a href="#u">גבינה קשה של סבתא</a></li>
+      <li class="food"><a href="#v">סזיקי פרסי</a></li>
+      <li class="food"><a href="#w">צ'ימיצ'ורי</a></li>
+      <li class="food"><a href="#x">רוטב אדום של סבא</a></li>
+      <li class="food"><a href="#y">קציצות דגים (גפילטא מלוח)</a></li>
+      <li class="food"><a href="#z">בצק עם בירה (טוב להרבה דברים)</a></li>
+      <li class="food"><a href="#aa">חרוסת</a></li>
+      <li class="food"><a href="#bb">לחמניות של פסח</a></li>
+      <li class="food"><a href="#cc">סלט כרוב</a></li>
+      <li class="food"><a href="#dd">פראסה</a></li>
+      <li class="food"><a href="#ee">רוטב בשמאל</a></li>
+
+      <li class="food title">מתוקים</li>
+      <li class="food"><a href="#ff">פלודה</a></li>
+      <li class="food"><a href="#gg">כדורי דבש שקדים</a></li>
+      <li class="food"><a href="#hh">עוגה בסיסית(יומולדת)</a></li>
+      <li class="food"><a href="#ii">עוגת שוקולד</a></li>
+      <li class="food"><a href="#jj">עוגיות רולדה של סבתא</a></li>
+    </ul>
+  </div>
+
   <div class="recipes">
     <div class="recipe" id="a1">
       <img class="img" src="gondi.jpg" alt="" align="left" />
@@ -778,9 +844,9 @@ ul#list li.title {
       <p>כוס חלב</p>
     </div>
     <!--////////////////////////////////-->
-    <div class="recipe" id="ii">
+    <div class="recipe">
       <h2>עוגת שוקולד</h2>
-      <p>4 ביצים</p>
+      <p id="ii">4 ביצים</p>
       <p>200 גרם חמאה</p>
       <p>חצי כוס קקאו</p>
       <p>חצי כוס מים</p>
@@ -807,7 +873,6 @@ ul#list li.title {
       <h3>מילוי:</h3>
       <p>ממרח תמרים/שוקולד אגוזים.</p>
       <p>לערבב את חומרי הבצק, לתת לו לנוח במשך חצי שעה. לרדד את הבצק לצורת ריבוע, לשים את המילוי, לגלגל, לחתוך לריבועים ולהכניס לתנור על 180 מעלות עד שמוכן.</p>
-
     </div>
   </div>
 </div>
