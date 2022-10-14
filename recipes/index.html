@@ -54,6 +54,8 @@ body, html {
   color: #fff;
   box-sizing: border-box;
   z-index: 111;
+  display: flex;
+  align-items: center;
 }
 
 .header a.menu-btn {
@@ -69,7 +71,18 @@ body, html {
   vertical-align: 2px;
   font-weight: bold;
   font-size: 20px;
+  flex: 1 1 auto;
 }
+
+.header .font-size {
+  flex: 0 0 auto;
+}
+
+.header .font-size .big {
+  font-size: 25px;
+  padding: 0 10px;
+}
+
 
 input[type="checkbox"] {
   opacity: 0;
@@ -77,6 +90,14 @@ input[type="checkbox"] {
   width: 0; 
   display: inline-block;
   position: absolute;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  height: 0;
+  width: 0; 
+  display: inline-block;
+  position: fixed;
 }
 
 input[type="checkbox"]:checked ~ .menu-wrap {
@@ -104,6 +125,19 @@ img.img {
   transition: all 200ms ease-out;
   cursor: pointer;
   border-radius: 10px;
+}
+
+@media (min-width: 900px) {
+  .img-checkbox:checked + .img {
+    max-width: 500px;
+    left: 50%;
+    margin-left: -250px;
+  }
+  
+  .img-icon-plus {
+    left: 50%;
+  
+  }
 }
 
 .img-label {
@@ -205,6 +239,10 @@ ul#list li label {
   cursor: pointer;
 }
 
+input[type="radio"]#big:checked ~ .recipes {
+  font-size: 22px;
+}
+
 .recipe {
   position: relative;
   padding: 90px 30px;
@@ -224,6 +262,10 @@ ul#list li label {
   <div class="header">
     <a class="menu-btn" href="#top"><i class="las la-bars"></i></a>
     <span class="header-title">אוכל של בית</span>
+    <div class="font-size">
+      <label class="big" for="big">א</label>
+      <label class="small" for="small">א</label>
+    </div>
   </div>
 
   <div class="menu-wrap">
@@ -276,7 +318,8 @@ ul#list li label {
       <li class="food"><a href="#jj">עוגיות רולדה של סבתא</a></li>
     </ul>
   </div>
-
+  <input type="radio" id="big" name="fontSize" />
+  <input type="radio" id="small" name="fontSize" />
   <div class="recipes">
     <div class="recipe" id="a1">
       <label class="img-label" for="AshReshteh-img">
