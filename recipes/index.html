@@ -30,8 +30,6 @@
 
 <body>
   <style>
-/*  */
-/*  */
 body, html {
   margin: 0;
   padding: 0;
@@ -106,7 +104,11 @@ img.img {
   transition: all 200ms ease-out;
 }
 
-img.img:hover {
+.img-label {
+  display: inline;
+}
+
+.img-checkbox:checked + img {
   position: fixed;
   left: 30px;
   top: 30px;
@@ -117,20 +119,22 @@ img.img:hover {
   transition: all 200ms ease-out;
 }
 
-img.img:hover + .close-img{
-  display: inline-block;
-  position: fixed;
-  bottom: 30px;
-  left: calc(50% - 44px);
-  background: #eee;
-  border-radius: 10px;
-  border: none;
-  padding: 10px 15px;
-  z-index: 201;
+.img-icon-plus {
+  position: absolute;
+  left: 40px;
+  top: 100px;
+  z-index: 1000;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #00000030;
 }
 
-.close-img {
- display: none;
+.img-checkbox:checked ~ .img-icon-plus {
+  top: 60px;
+}
+
+.img-checkbox:checked ~ .img-icon-plus:before {
+  content: "\f010";
 }
 
 a {
@@ -189,7 +193,6 @@ ul#list {
   color: #222;
   max-height: calc(100vh - 75px);
   min-height: calc(100vh - 75px);
-/*   overflow: auto; */
 }
 
 ul#list li {
@@ -226,7 +229,6 @@ ul#list li label {
   margin: 0 0 5px 0;
   background: #fff;
   overflow: auto;
-/*   top: 100px; */
 }
   </style>
   
@@ -290,13 +292,11 @@ ul#list li label {
 
   <div class="recipes">
     <div class="recipe" id="a1">
-      <label class="" for="gondi-img">
-        <input type="checkbox" id="gondi-img" />
+      <label class="img-label" for="gondi-img">
+        <input class="img-checkbox" type="checkbox" id="gondi-img" />
         <img class="img" src="https://goltzman.github.io/recipes/gondi.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i> 
       </label>
-      
-      <i class="las la-search-plus"></i>
-      <button class="close-img">סגור תמונה</button>
       <h2>אשרשטה (ל6 נפשות)</h2>
       <p>חצי כוס גרגירי חומוס</p>
       <p>חצי כוס שעועית</p>
@@ -340,7 +340,6 @@ ul#list li label {
     <div class="recipe" id="a">
       <h2>גונדי</h2>
       <img class="img" src="gondi.jpg" alt="" align="left" />
-      <button class="close-img">סגור תמונה</button>
       <h4>מרק :</h4>
       <p>רבע כוס גרגירי חומוס</p>
       <p>רבע כוס שעועית</p>
@@ -407,7 +406,6 @@ ul#list li label {
     <div class="recipe" id="e">
       <h2>אורז פרסי עם גולגולים</h2>
       <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
-      <button class="close-img">סגור תמונה</button>
       <h4>האורז :</h4>
       <p>2 כוסות אורז</p>
       <p>כף מלח</p>
@@ -612,7 +610,6 @@ ul#list li label {
     <!--////////////////////////////////-->
     <div class="recipe" id="q">
       <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
-      <button class="close-img">סגור תמונה</button>
       <h2>רוטב ירוק (דרמה סבזי)</h2>
       <p>רבע קילו בשר בקר חתוך לקוביות</p>
       <p>חצי כוס שעועית אדומה שהושרה במים במשך לילה</p>
@@ -656,7 +653,6 @@ ul#list li label {
     <!--////////////////////////////////-->
     <div class="recipe" id="t">
       <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
-      <button class="close-img">סגור תמונה</button>
       <h2>חומוס</h2>
       <p>חבילת גרגירי חומוס</p>
       <p>טחינה</p>
@@ -696,7 +692,6 @@ ul#list li label {
     <!--////////////////////////////////-->
     <div class="recipe" id="w">
       <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
-      <button class="close-img">סגור תמונה</button>
       <h2>צ'ימיצ'ורי</h2>
       <p>חופן פטרוזיליה קצוצה</p>
       <p>3 שיני שום</p>
