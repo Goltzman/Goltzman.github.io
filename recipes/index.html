@@ -31,6 +31,7 @@
 <body>
   <style>
 /*  */
+/*  */
 body, html {
   margin: 0;
   padding: 0;
@@ -85,14 +86,14 @@ input[type="checkbox"]:checked ~ .menu-wrap {
 }
 
 .menu-wrap {
-/*   position: fixed; */
   width: 100%;
-  height: 100vh;
+  max-height: calc(100vh - 2px);
   padding: 0;
   top: 0;
   left: 100%;
   transition: all 200ms ease-out;
   z-index: 99;
+  overflow: auto;
 }
 
 h2 {
@@ -188,7 +189,7 @@ ul#list {
   color: #222;
   max-height: calc(100vh - 75px);
   min-height: calc(100vh - 75px);
-  overflow: auto;
+/*   overflow: auto; */
 }
 
 ul#list li {
@@ -289,7 +290,12 @@ ul#list li label {
 
   <div class="recipes">
     <div class="recipe" id="a1">
-      <img class="img" src="gondi.jpg" alt="" align="left" />
+      <label class="" for="gondi-img">
+        <input type="checkbox" id="gondi-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/gondi.jpg" alt="" align="left" />
+      </label>
+      
+      <i class="las la-search-plus"></i>
       <button class="close-img">סגור תמונה</button>
       <h2>אשרשטה (ל6 נפשות)</h2>
       <p>חצי כוס גרגירי חומוס</p>
@@ -845,9 +851,9 @@ ul#list li label {
       <p>כוס חלב</p>
     </div>
     <!--////////////////////////////////-->
-    <div class="recipe">
+    <div class="recipe" id="ii">
       <h2>עוגת שוקולד</h2>
-      <p id="ii">4 ביצים</p>
+      <p>4 ביצים</p>
       <p>200 גרם חמאה</p>
       <p>חצי כוס קקאו</p>
       <p>חצי כוס מים</p>
