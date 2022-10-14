@@ -76,11 +76,25 @@ body, html {
 
 .header .font-size {
   flex: 0 0 auto;
+  display: flex;
+  margin-left: -10px;
 }
 
-.header .font-size .big {
+.header .font-size .big, .header .font-size .small {
   font-size: 25px;
-  padding: 0 10px;
+  padding: 0;
+  margin: -2px 0 0 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 10px;
+  background: #333;
+  display: inline-block;
+}
+
+.header .font-size .small {
+  font-size: 15px;
 }
 
 
@@ -243,6 +257,10 @@ input[type="radio"]#big:checked ~ .recipes {
   font-size: 22px;
 }
 
+input[type="radio"]#big:checked ~ .menu-wrap ul#list li {
+  font-size: 22px;
+}
+
 .recipe {
   position: relative;
   padding: 90px 30px;
@@ -267,7 +285,8 @@ input[type="radio"]#big:checked ~ .recipes {
       <label class="small" for="small">א</label>
     </div>
   </div>
-
+  <input type="radio" id="big" name="fontSize" />
+  <input type="radio" id="small" name="fontSize" />
   <div class="menu-wrap">
     <div class="search-bar">
       <input id="searchbar" onkeyup="search_food()" type="text" name="search" placeholder="חיפוש" />
@@ -318,8 +337,7 @@ input[type="radio"]#big:checked ~ .recipes {
       <li class="food"><a href="#jj">עוגיות רולדה של סבתא</a></li>
     </ul>
   </div>
-  <input type="radio" id="big" name="fontSize" />
-  <input type="radio" id="small" name="fontSize" />
+
   <div class="recipes">
     <div class="recipe" id="a1">
       <label class="img-label" for="AshReshteh-img">
