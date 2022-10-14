@@ -103,6 +103,7 @@ img.img {
   z-index: 99;
   transition: all 200ms ease-out;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .img-label {
@@ -124,7 +125,7 @@ img.img {
   position: absolute;
   left: 40px;
   top: 100px;
-  z-index: 1000;
+  z-index: 100;
   font-size: 30px;
   color: #fff;
   text-shadow: 2px 2px 0 #00000030;
@@ -133,6 +134,7 @@ img.img {
 .img-checkbox:checked ~ .img-icon-plus {
   top: 40px;
   position: fixed;
+  z-index: 1000;
 }
 
 .img-checkbox:checked ~ .img-icon-plus:before {
@@ -277,12 +279,12 @@ ul#list li label {
 
   <div class="recipes">
     <div class="recipe" id="a1">
-      <label class="img-label" for="gondi-img">
-        <input class="img-checkbox" type="checkbox" id="gondi-img" />
-        <img class="img" src="https://goltzman.github.io/recipes/gondi.jpg" alt="" align="left" />
-        <i class="img-icon-plus las la-search-plus"></i> 
+      <label class="img-label" for="AshReshteh-img">
+        <input class="img-checkbox" type="checkbox" id="AshReshteh-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/AshReshteh.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
       </label>
-      <h2>אשרשטה (ל6 נפשות)</h2>
+      <h2>אשרשטה<br />(ל6 נפשות)</h2>
       <p>חצי כוס גרגירי חומוס</p>
       <p>חצי כוס שעועית</p>
       <p>חצי כוס מש (עיגולים ירוקים קטנים)</p>
@@ -323,8 +325,12 @@ ul#list li label {
       <p>מוסיפים את המים, הסוכר והתבלינים, מורידים מהאש מערבבים היטב ומחזירים לאש עד שהמים מתאדים.</p>
     </div>
     <div class="recipe" id="a">
+      <label class="img-label" for="gondi-img">
+        <input class="img-checkbox" type="checkbox" id="gondi-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/gondi.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>גונדי</h2>
-      <img class="img" src="gondi.jpg" alt="" align="left" />
       <h4>מרק :</h4>
       <p>רבע כוס גרגירי חומוס</p>
       <p>רבע כוס שעועית</p>
@@ -389,8 +395,12 @@ ul#list li label {
     </div>
     <!--////////////////////////////////-->
     <div class="recipe" id="e">
+      <label class="img-label" for="orez-img">
+        <input class="img-checkbox" type="checkbox" id="orez-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/orez.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>אורז פרסי עם גולגולים</h2>
-      <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
       <h4>האורז :</h4>
       <p>2 כוסות אורז</p>
       <p>כף מלח</p>
@@ -433,8 +443,12 @@ ul#list li label {
     </div>
     <!--////////////////////////////////-->
     <div class="recipe" id="g">
+      <label class="img-label" for="SirShabat-img">
+        <input class="img-checkbox" type="checkbox" id="SirShabat-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/SirShabat.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>סיר של שבת בבוקר (חמין פרסי)</h2>
-      <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
       <p>ביצים</p>
       <p>תפוחי אדמה כמספר האנשים</p>
       <p>גזר</p>
@@ -549,6 +563,11 @@ ul#list li label {
     </div>
     <!--////////////////////////////////-->
     <div class="recipe" id="n">
+      <label class="img-label" for="asado-img">
+        <input class="img-checkbox" type="checkbox" id="asado-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/asado.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>צלי אסאדו של אבא</h2>
       <p>2 קילו נתח אסאדו עם עצם-חתוך לרצועות אורך</p>
       <p>1 כפית צ'ילי יבש</p>
@@ -594,7 +613,11 @@ ul#list li label {
     </div>
     <!--////////////////////////////////-->
     <div class="recipe" id="q">
-      <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
+      <label class="img-label" for="greenS-img">
+        <input class="img-checkbox" type="checkbox" id="greenS-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/greenS.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>רוטב ירוק (דרמה סבזי)</h2>
       <p>רבע קילו בשר בקר חתוך לקוביות</p>
       <p>חצי כוס שעועית אדומה שהושרה במים במשך לילה</p>
@@ -637,7 +660,11 @@ ul#list li label {
     </div>
     <!--////////////////////////////////-->
     <div class="recipe" id="t">
-      <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
+      <label class="img-label" for="hummus-img">
+        <input class="img-checkbox" type="checkbox" id="hummus-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/hummus.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>חומוס</h2>
       <p>חבילת גרגירי חומוס</p>
       <p>טחינה</p>
@@ -676,7 +703,11 @@ ul#list li label {
     </div>
     <!--////////////////////////////////-->
     <div class="recipe" id="w">
-      <img class="img" src="https://i.postimg.cc/wMKtR2bV/PXL-20221009-161625509.jpg" alt="" align="left" />
+      <label class="img-label" for="chimmi-img">
+        <input class="img-checkbox" type="checkbox" id="chimmi-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/chimmi.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>צ'ימיצ'ורי</h2>
       <p>חופן פטרוזיליה קצוצה</p>
       <p>3 שיני שום</p>
