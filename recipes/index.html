@@ -63,8 +63,10 @@ body, html {
   cursor: pointer;
   color: #fff;
   width: auto;
-  display: inline-block;
-  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1F51AD;
   height: 40px;
   width: 40px;
   line-height: 40px;
@@ -74,7 +76,7 @@ body, html {
 }
 
 .header a.menu-btn:active, .header a.menu-btn:hover {
-  background: #111;
+  background: #183b7a;
 }
 
 .header-title {
@@ -101,6 +103,11 @@ body, html {
   border-radius: 10px;
   background: #333;
   display: inline-block;
+  cursor: pointer;
+}
+
+.header .font-size .big:hover, .header .font-size .small:hover {
+  background: #111;
 }
 
 .header .font-size .small {
@@ -148,7 +155,6 @@ img.img {
   z-index: 99;
   transition: all 200ms ease-out;
   cursor: pointer;
-  border-radius: 10px;
 }
 
 @media (min-width: 900px) {
@@ -176,12 +182,13 @@ img.img {
 
 .img-checkbox:checked + img {
   position: fixed;
-  left: 30px;
-  top: 30px;
-  width: calc(100vw - 60px);
+  left: 20px;
+  top: 20px;
+  width: calc(100vw - 40px);
   height: auto;
   box-shadow: 0 0 0 900px rgba(0,0,0,0.8);
   z-index: 200;
+  border-radius: 10px;
   transition: all 200ms ease-out;
 }
 
@@ -352,6 +359,9 @@ input[type="radio"]#big:checked ~ .menu-wrap ul#list li {
       <li class="food"><a href="#hh">עוגה בסיסית(יומולדת)</a></li>
       <li class="food"><a href="#ii">עוגת שוקולד</a></li>
       <li class="food"><a href="#jj">עוגיות רולדה של סבתא</a></li>
+      <li class="food"><a href="#kk">פנקיק של סבא</a></li>
+      <li class="food"><a href="#ll">סנגריה</a></li>
+      <li class="food"><a href="#mm">מלבי קוקוס</a></li>
     </ul>
   </div>
 
@@ -455,6 +465,11 @@ input[type="radio"]#big:checked ~ .menu-wrap ul#list li {
     </div>
     <!--////////////////////////////////-->
     <div class="recipe" id="d">
+      <label class="img-label" for="gefen-img">
+        <input class="img-checkbox" type="checkbox" id="gefen-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/gefen.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>עלי גפן ממולאים (דורמה)</h2>
       <p>2 כוסות אורז</p>
       <p>200 גרם תמרים חתוכים</p>
@@ -601,6 +616,11 @@ input[type="radio"]#big:checked ~ .menu-wrap ul#list li {
     </div>
     <!--////////////////////////////////-->
     <div class="recipe" id="l">
+      <label class="img-label" for="empanadas-img">
+        <input class="img-checkbox" type="checkbox" id="empanadas-img" />
+        <img class="img" src="https://goltzman.github.io/recipes/empanadas.jpg" alt="" align="left" />
+        <i class="img-icon-plus las la-search-plus"></i>
+      </label>
       <h2>אמפנדס</h2>
       <h3>בצק :</h3>
       <p>600 גרם קמח</p>
@@ -969,6 +989,48 @@ input[type="radio"]#big:checked ~ .menu-wrap ul#list li {
       <h3>מילוי:</h3>
       <p>ממרח תמרים/שוקולד אגוזים.</p>
       <p>לערבב את חומרי הבצק, לתת לו לנוח במשך חצי שעה. לרדד את הבצק לצורת ריבוע, לשים את המילוי, לגלגל, לחתוך לריבועים ולהכניס לתנור על 180 מעלות עד שמוכן.</p>
+    </div>
+    <!--////////////////////////////////-->
+    <div class="recipe" id="kk">
+      <h2>פנקיק של סבא</h2>
+      <p>1 כוס קמח</p>
+      <p>2 כפיות אבקת אפיה</p>
+      <p>2 כפות סוכר</p>
+      <p>3/4 כוס חלב</p>
+      <p>4 כפות שמן</p>
+      <p>1 ביצה</p>
+      <p>1 כפית תמצית וניל</p>
+      <p>חצי כפית מלח</p>
+      <p>לערבב בנפרד את כל היבשים והרטובים ולאחר מכן לערבב יחד בהדרגה.</p>
+    </div>
+    <!--////////////////////////////////-->
+    <div class="recipe" id="ll">
+      <h2>סנגריה</h2>
+      <p>1 תפוח</p>
+      <p>1 תפוז</p>
+      <p>1 אגס</p>
+      <p>1 לימון</p>
+      <p>חצי קופסת אננס (עדיף טרי אם יש)</p>
+      <p>3 שזיפים</p>
+      <p>3 אפרסקים</p>
+      <p>5 מקלות קינמון</p>
+      <p>3-4 ציפורן</p>
+      <p>סוכר לפי הטעם</p>
+      <p>ליטר יין אדום</p>
+      <p>ליטר ספרייט</p>
+      <p>לערבב הכל ביחד, להשאיר במקרר כמה ימים כדי שהטעמים התמזגו ולהגיש קר.</p>
+    </div>
+    <!--////////////////////////////////-->
+    <div class="recipe" id="mm">
+      <h2>מלבי קוקוס</h2>
+      <p>3 כוסות קרם קוקוס</p>
+      <p>3 כוסות מים</p>
+      <p>3/4 כוס סוכר</p>
+      <p>חצי כוס קורנפלור</p>
+      <p>כף מי ורדים</p>
+      <p>להרתיח את הקוקוס עם 2 כוסות מים והסוכר.</p>
+      <p>להמיס את הקורנפלור עם הכוס מים הנותרה ולהוסיף לבלילה המורתחת.</p>
+      <p>להנמיך לאש בינונית ל3 דקות או עד שמסמיך, להוסיף את מי הורדים, להעביר לכוסות ולהכניס למקרר עד שזה מתקשה.</p>
     </div>
   </div>
 </div>
