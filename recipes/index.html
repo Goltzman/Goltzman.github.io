@@ -39,6 +39,15 @@ body, html {
   background: #1F51AD;
   position: relative;
   overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+#top {
+  opacity: 0;
+  font-size: 0;
+  height: 0;
+  width: 0;
+  padding: 0;
 }
 
 .header {
@@ -301,9 +310,9 @@ input[type="radio"]#big:checked ~ .menu-wrap ul#list li {
   </style>
   
 <div class="main">
-  <span id="top"></span>
+  <div id="top">top</div>
   <div class="header">
-    <a class="menu-btn" href="https://goltzman.github.io/recipes/index.html#top"><i class="las la-home"></i></a>
+    <a class="menu-btn" onclick='window.scrollTo(0, 0);' href="#top"><i class="las la-home"></i></a>
     <span class="header-title">אוכל של בית</span>
     <div class="font-size">
       <label class="big" for="big">א</label>
